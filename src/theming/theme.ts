@@ -1,10 +1,13 @@
 const theme = {
   color: {
     text: {
-      primary: "#000000",
+      accent: "#0062FF",
+      primary: "#243c56",
+      light: "#818FA3",
+      lighter: "#B9C6E0",
     },
     background: {
-      primary: "hotpink",
+      primary: "#fff",
     },
   },
   layout: {
