@@ -35,9 +35,7 @@ interface IRepository {
     totalCount: number
   }
   languages: {
-    edges: {
-      node: ILanguage
-    }[]
+    nodes: ILanguage[]
   }
   stargazers: {
     totalCount: number
@@ -258,8 +256,8 @@ const IndexPage: AppFunctionComponent<IProps> = ({
   // Generate languages
   organization.repositories.nodes.forEach(
     (r) =>
-      (languages[r.languages.edges[0].node.id] = {
-        ...r.languages.edges[0].node,
+      (languages[r.languages.nodes[0].id] = {
+        ...r.languages.nodes[0],
       })
   )
 
@@ -330,8 +328,8 @@ const IndexPage: AppFunctionComponent<IProps> = ({
                   .includes(filter.query)) &&
               // language match
               (filter.language.id === languages.ANY.id ||
-                r.languages.edges.filter((e) => {
-                  return e.node.id === filter.language.id
+                r.languages.nodes.filter((n) => {
+                  return n.id === filter.language.id
                 }).length)
           )
           .map((r) => (
@@ -350,9 +348,9 @@ const IndexPage: AppFunctionComponent<IProps> = ({
               <CardFooter>
                 <div>
                   <ColorLanguage
-                    style={{ color: r.languages.edges[0].node.color }}
+                    style={{ color: r.languages.nodes[0].color }}
                   />{" "}
-                  {r.languages.edges[0].node.name}
+                  {r.languages.nodes[0].name}
                 </div>
                 <div>
                   <StarsIcon />
@@ -390,13 +388,11 @@ export const query = graphql`
             assignableUsers {
               totalCount
             }
-            languages(last: 1) {
-              edges {
-                node {
-                  id
-                  name
-                  color
-                }
+            languages(first: 1) {
+              nodes {
+                id
+                name
+                color
               }
             }
             stargazers {
