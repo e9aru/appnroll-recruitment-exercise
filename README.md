@@ -1,3 +1,20 @@
+# Appnroll recruitment exercise
+
+## Setup
+
+Setup following enviroment variables (you can do it by creting `.env.\*` file):
+
+**SITE_URL** - used as a base for plugins autogenerating contnet (eg. sitemap and robots). Netlify provides the proper value by default, so it's required mostly in development.
+
+**GITHUB_TOKEN** - used for fetch data from github graphql api (GitHub public API has request limits). Needed permisions: _read:org_
+
+## Notes
+
+- Things like number of listed repositories or pagination wasn't mentioned -> it's set to ask for last 6
+- Traffic data are not supported yet in GitHub v4 -> corresponding element (from repository card footer) is fake '?'
+
+---
+
 <p align="center">
   <a href="https://appnroll.com">
     <img alt="App'n'roll" src="https://appnroll.com/img/appnroll-logotype.svg" width="160" />
