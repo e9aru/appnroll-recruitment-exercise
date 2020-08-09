@@ -193,6 +193,14 @@ const CardStar = styled.button`
   position: absolute;
   top: 32px;
   right: 32px;
+  outline: none;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+
+  &.clicked {
+    transform: scale(0.8);
+  }
 `
 const CardLink = styled.a`
   color: ${textColor("accent")};
@@ -249,11 +257,15 @@ const IndexPage: AppFunctionComponent<IProps> = ({
     github: { organization },
   },
 }) => {
+  const LSKEY = "starred"
   const languages: any = { ANY: { id: "ANY", name: "", color: "" } }
   const [filter, setFilter] = useState<IFilter>({
     query: "",
     language: languages.ANY,
   })
+  const [starred, setStarred] = useState<string>(
+    (typeof window !== "undefined" && window.localStorage.getItem(LSKEY)) || ""
+  )
 
   // Generate languages
   organization.repositories.nodes.forEach(
@@ -263,9 +275,9 @@ const IndexPage: AppFunctionComponent<IProps> = ({
       })
   )
 
-  useEffect(() => {
-    console.log("FILTER:", filter)
-  })
+  // useEffect(() => {
+  //   console.log("FILTER:", filter)
+  // })
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     e.preventDefault()
@@ -279,6 +291,32 @@ const IndexPage: AppFunctionComponent<IProps> = ({
       query: filter.query,
       language: languages[e.target.value],
     })
+  }
+
+  const handleStarClick = (
+    id: string,
+    e: React.MouseEvent<HTMLElement>
+  ): void => {
+    e.preventDefault()
+
+    let starredArr = starred.split(" ").filter((ele) => ele)
+    let idx = starredArr.indexOf(id)
+    let { classList } = e.currentTarget
+
+    idx > -1 ? starredArr.splice(idx, 1) : starredArr.push(id)
+
+    let starredStr = starredArr.join(" ").trim()
+
+    setStarred(starredStr)
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(LSKEY, starredStr)
+
+      // Decorate
+      classList.toggle("clicked")
+      window.setTimeout(() => {
+        classList.toggle("clicked")
+      }, 200)
+    }
   }
 
   const clearFilters = (e: React.MouseEvent): void => {
@@ -341,8 +379,11 @@ const IndexPage: AppFunctionComponent<IProps> = ({
             >
               <CardHeader>
                 <CardTitle>{r.name}</CardTitle>
-                <CardStar>
-                  <AddIcon />
+                <CardStar
+                  title={starred.includes(r.id) ? "Star" : "Unstar"}
+                  onClick={handleStarClick.bind(null, r.id)}
+                >
+                  {starred.includes(r.id) ? <AddedIcon /> : <AddIcon />}
                 </CardStar>
               </CardHeader>
               <CardLink>
