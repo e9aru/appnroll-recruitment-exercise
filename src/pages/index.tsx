@@ -20,7 +20,6 @@ import StarsIcon from "../images/icons/stars.svg"
 import VisitorsIcon from "../images/icons/visitors.svg"
 import IssuesIcon from "../images/icons/issues.svg"
 import Logo from "../images/logo/appnroll.svg"
-import { string } from "prop-types"
 
 interface IRepository {
   id: string
