@@ -1,16 +1,8 @@
-/*
- * true description instead of `we rock it` (under title)
- */
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
-import {
-  textColor,
-  breakpoint,
-  backgroundColor,
-} from "../theming/theme-getters"
+import { textColor, breakpoint } from "../theming/theme-getters"
 import AppFunctionComponent from "@appnroll/app-function-component"
 import { graphql } from "gatsby"
 
