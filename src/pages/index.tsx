@@ -31,9 +31,6 @@ interface IRepository {
   issues: {
     totalCount: number
   }
-  assignableUsers: {
-    totalCount: number
-  }
   languages: {
     nodes: ILanguage[]
   }
@@ -222,6 +219,11 @@ const CardFooter = styled.footer`
   justify-content: space-between;
   align-items: center;
 
+  > * {
+    display: flex;
+    align-items: center;
+  }
+
   svg {
     margin-right: 4px;
   }
@@ -360,8 +362,7 @@ const IndexPage: AppFunctionComponent<IProps> = ({
                   {r.stargazers.totalCount}
                 </div>
                 <div>
-                  <VisitorsIcon />
-                  {r.assignableUsers.totalCount}
+                  <VisitorsIcon />?
                 </div>
                 <div>
                   <IssuesIcon />
@@ -386,9 +387,6 @@ export const query = graphql`
             id
             name
             issues {
-              totalCount
-            }
-            assignableUsers {
               totalCount
             }
             languages(first: 1) {
