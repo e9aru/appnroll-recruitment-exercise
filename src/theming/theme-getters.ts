@@ -11,3 +11,9 @@ export const backgroundColor = (name: keyof Theme["color"]["background"]) => ({
 }: {
   theme: Theme
 }) => theme.color.background[name]
+
+export const breakpoint = (name: keyof Theme["breakpoint"]) => ({
+  theme,
+}: {
+  theme: Theme
+}) => theme.breakpoint[name]

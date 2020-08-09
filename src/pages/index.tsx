@@ -6,7 +6,11 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
-import { textColor, backgroundColor } from "../theming/theme-getters"
+import {
+  textColor,
+  breakpoint,
+  backgroundColor,
+} from "../theming/theme-getters"
 import AppFunctionComponent from "@appnroll/app-function-component"
 import { graphql } from "gatsby"
 
@@ -150,10 +154,25 @@ const Language = styled.select`
 `
 const Clear = styled.button``
 const Filters = styled.form`
-  margin: 2.857rem 0;
-  max-width: 600px;
+  margin: 31px -9px;
   display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
   justify-content: space-between;
+
+  > * {
+    margin: 9px;
+    flex-basis: 100%;
+    }
+  }
+
+  @media (min-width: ${breakpoint("tablet")}) {
+    max-width: 600px;
+
+    > * {
+      flex-basis: auto;
+    }
+  }
 `
 const Cards = styled.section`
   display: flex;
