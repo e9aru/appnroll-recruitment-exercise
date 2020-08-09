@@ -78,3 +78,6 @@ lighthouse-pages.json
 
 # Storybook
 storybook-static
+
+# editor settings
+.vscode/settings.json
