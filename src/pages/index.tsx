@@ -333,7 +333,10 @@ const IndexPage: AppFunctionComponent<IProps> = ({
                 }).length)
           )
           .map((r) => (
-            <Card key={r.id}>
+            <Card
+              key={r.id}
+              style={{ borderTopColor: r.languages.nodes[0].color }}
+            >
               <CardHeader>
                 <CardTitle>{r.name}</CardTitle>
                 <CardStar>
