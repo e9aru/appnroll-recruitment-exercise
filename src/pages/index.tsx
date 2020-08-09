@@ -152,7 +152,6 @@ const Language = styled.select`
   flex-grow: 1;
   margin: 0 1.125rem;
 `
-const Clear = styled.button``
 const Filters = styled.form`
   margin: 31px -9px;
   display: flex;
@@ -316,9 +315,9 @@ const IndexPage: AppFunctionComponent<IProps> = ({
             </option>
           ))}
         </Language>
-        <Clear title="Clear filters" onClick={clearFilters}>
+        <button title="Clear filters" onClick={clearFilters}>
           Clear filters
-        </Clear>
+        </button>
       </Filters>
       <Cards>
         {organization.repositories.nodes
