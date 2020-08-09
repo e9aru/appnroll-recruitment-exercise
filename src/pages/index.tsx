@@ -212,12 +212,13 @@ const CardFooter = styled.footer`
 `
 const Card = styled.article`
   display: flex;
-  flex: 1 320px;
+  flex: 1 calc(33% - 15px);
   flex-direction: column;
   border: 1px solid ${textColor("lightest")};
   border-top-width: 6px;
   border-radius: 5px;
   margin: 0 7.5px 24px;
+  min-width: 330px;
 
   > * {
     padding-left: 30px;
