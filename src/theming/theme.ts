@@ -15,7 +15,11 @@ const theme = {
     width: "73.75rem",
   },
   breakpoint: {
-    tablet: "48rem",
+    tablet: 48,
+    sm: "576px",
+    md: "768px",
+    lg: "992px",
+    xl: "1200px",
   },
 }
 

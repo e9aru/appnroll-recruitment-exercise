@@ -168,19 +168,13 @@ const Filters = styled.form`
     }
   }
 
-  @media (min-width: ${breakpoint("tablet")}) {
+  @media (min-width: ${breakpoint("sm")}) {
     max-width: 600px;
 
     > * {
       flex-basis: auto;
     }
   }
-`
-const Cards = styled.section`
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -7.5px;
-  margin-right: -7.5px;
 `
 const CardHeader = styled.header`
   position: relative;
@@ -243,19 +237,32 @@ const CardFooter = styled.footer`
     margin-right: 4px;
   }
 `
+const Cards = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 1 auto;
+  margin: 0 -7.5px;
+`
 const Card = styled.article`
   display: flex;
-  flex: 1 calc(33% - 15px);
   flex-direction: column;
   border: 1px solid ${textColor("lightest")};
   border-top-width: 6px;
   border-radius: 5px;
   margin: 0 7.5px 24px;
-  min-width: 330px;
+  flex-basis: 100%;
 
   > * {
     padding-left: 30px;
     padding-right: 30px;
+  }
+
+  @media (min-width: ${breakpoint("md")}) {
+    flex-basis: calc(50% - 15px);
+  }
+
+  @media (min-width: ${breakpoint("lg")}) {
+    flex-basis: calc(33.33% - 15px);
   }
 `
 
@@ -306,13 +313,13 @@ const IndexPage: AppFunctionComponent<IProps> = ({
   ): void => {
     e.preventDefault()
 
-    let starredArr = starred.split(" ").filter((ele) => ele)
-    let idx = starredArr.indexOf(id)
-    let { classList } = e.currentTarget
+    const starredArr = starred.split(" ").filter((ele) => ele)
+    const idx = starredArr.indexOf(id)
+    const { classList } = e.currentTarget
 
     idx > -1 ? starredArr.splice(idx, 1) : starredArr.push(id)
 
-    let starredStr = starredArr.join(" ").trim()
+    const starredStr = starredArr.join(" ").trim()
 
     setStarred(starredStr)
     if (typeof window !== "undefined") {

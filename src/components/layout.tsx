@@ -13,8 +13,8 @@ import { backgroundColor, textColor } from "../theming/theme-getters"
 
 const ContentWrapper = styled.div`
   margin: 0 auto;
-  max-width: 1150px;
-  padding: 5rem 1.0875rem 5rem;
+  max-width: 1180px;
+  padding: 5rem 15px;
 `
 
 const GlobalStyle = createGlobalStyle`
