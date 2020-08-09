@@ -99,6 +99,10 @@ const Details = styled.div`
     margin: 0 0.1em;
   }
 
+  a {
+    color: ${textColor("primary")};
+  }
+
   span {
     margin-right: 24px;
     letter-spacing: 0.01em;
@@ -115,8 +119,13 @@ const ProfileInfo = styled(
     repositoriesCount: number
   }) => (
     <header className={props.className}>
-      <Avatar href={props.websiteUrl} target="_blank" title={props.name}>
-        <Logo />
+      <Avatar
+        title={"Visit " + props.name + " website"}
+        href={props.websiteUrl}
+        target="_blank"
+        rel="nofollow"
+      >
+        <Logo title={props.name} />
       </Avatar>
       <Details>
         <h1>
@@ -126,13 +135,20 @@ const ProfileInfo = styled(
         </h1>
         <p>{props.description}</p>
         <div>
-          <span>
+          <span title="Location">
             <LocationIcon />
             {props.location}
           </span>
           <span>
             <LinkIcon />
-            {props.websiteUrl}
+            <a
+              title={"Visit " + props.name + " website"}
+              href={props.websiteUrl}
+              target="_blank"
+              rel="nofollow"
+            >
+              {props.websiteUrl}
+            </a>
           </span>
         </div>
       </Details>
@@ -194,7 +210,6 @@ const CardStar = styled.button`
   top: 32px;
   right: 32px;
   outline: none;
-  cursor: pointer;
   transform: scale(1);
   transition: transform 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 
@@ -336,11 +351,16 @@ const IndexPage: AppFunctionComponent<IProps> = ({
       />
       <Filters title="Filters">
         <Search
+          title="Search pharse"
           placeholder="Search"
           value={filter.query}
           onChange={handleSearchChange}
         />
-        <Language value={filter.language.id} onChange={handleLanguageChange}>
+        <Language
+          title="Language"
+          value={filter.language.id}
+          onChange={handleLanguageChange}
+        >
           {Object.keys(languages).map((k, index) => (
             <option
               aria-selected={filter.language.id === k}
@@ -386,7 +406,12 @@ const IndexPage: AppFunctionComponent<IProps> = ({
                   {starred.includes(r.id) ? <AddedIcon /> : <AddIcon />}
                 </CardStar>
               </CardHeader>
-              <CardLink>
+              <CardLink
+                title="Visit repository"
+                href={r.url}
+                target="_blank"
+                rel="nofollow"
+              >
                 <ExternalLinkIcon />
                 {r.url.split("github.com/")[1]}
               </CardLink>
@@ -394,19 +419,26 @@ const IndexPage: AppFunctionComponent<IProps> = ({
               <CardFooter>
                 <div>
                   <ColorLanguage
+                    title="Language color"
                     style={{ color: r.languages.nodes[0].color }}
                   />{" "}
                   {r.languages.nodes[0].name}
                 </div>
                 <div>
-                  <StarsIcon />
+                  <StarsIcon
+                    title={`Starred $(r.stargazers.totalCount) times`}
+                  />
                   {r.stargazers.totalCount}
                 </div>
                 <div>
                   <VisitorsIcon />?
                 </div>
                 <div>
-                  <IssuesIcon />
+                  <IssuesIcon
+                    title={`${r.issues.totalCount} issue${
+                      r.issues.totalCount === 1 ? "" : "s"
+                    }`}
+                  />
                   {r.issues.totalCount}
                 </div>
               </CardFooter>

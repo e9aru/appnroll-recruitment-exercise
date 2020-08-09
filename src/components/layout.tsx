@@ -64,7 +64,10 @@ const GlobalStyle = createGlobalStyle`
     color: #fff;
     background: ${textColor("accent")};
     border-color: ${textColor("accent")};
+    cursor: pointer;
   }
+
+  a, a:hover {text-decoration: none}
 
   svg {
     fill: currentColor;
