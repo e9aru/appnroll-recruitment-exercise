@@ -5,6 +5,7 @@ const theme = {
       primary: "#243c56",
       light: "#818FA3",
       lighter: "#B9C6E0",
+      lightest: "#E3E5E8",
     },
     background: {
       primary: "#fff",

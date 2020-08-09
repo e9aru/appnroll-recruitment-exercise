@@ -12,12 +12,13 @@ import { graphql } from "gatsby"
 
 import AddIcon from "../images/icons/add.svg"
 import AddedIcon from "../images/icons/added.svg"
-import ExternalLinkIcon from "../iamges/icons/external_link.svg"
-import IssuesIcon from "../iamges/icons/issues.svg"
+import ExternalLinkIcon from "../images/icons/external_link.svg"
 import LinkIcon from "../images/icons/link.svg"
 import LocationIcon from "../images/icons/location.svg"
+import ColorLanguage from "../images/icons/color_language.svg"
 import StarsIcon from "../images/icons/stars.svg"
 import VisitorsIcon from "../images/icons/visitors.svg"
+import IssuesIcon from "../images/icons/issues.svg"
 import Logo from "../images/logo/appnroll.svg"
 import { string } from "prop-types"
 
@@ -86,16 +87,20 @@ const Avatar = styled.a`
 `
 const Details = styled.div`
   padding: 0 20px;
+
   > * {
     margin: 0.571rem 0;
   }
+
   p {
     color: ${textColor("light")};
   }
+
   svg {
     vertical-align: top;
     margin: 0 0.1em;
   }
+
   span {
     margin-right: 24px;
     letter-spacing: 0.01em;
@@ -146,19 +151,80 @@ const Language = styled.select`
 `
 const Clear = styled.button``
 const Filters = styled.form`
-  margin: 2.3rem 0;
+  margin: 2.857rem 0;
   max-width: 600px;
   display: flex;
   justify-content: space-between;
 `
-const Cards = styled.section``
-const CardHeader = styled.header``
-const CardTitle = styled.h2``
-const CardStar = styled.button``
-const CardLink = styled.a``
-const CardDescription = styled.p``
-const CardFooter = styled.footer``
-const Card = styled.article``
+const Cards = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -7.5px;
+  margin-right: -7.5px;
+`
+const CardHeader = styled.header`
+  position: relative;
+`
+const CardTitle = styled.h2`
+  font-size: 1.714rem;
+  color: #243c56;
+  padding-right: 40px;
+  margin: 2rem 0 1.143rem;
+`
+const CardStar = styled.button`
+  width: 32px;
+  height: 32px;
+  line-height: 1;
+  text-align: center;
+  display: block;
+  padding: 0;
+  position: absolute;
+  top: 32px;
+  right: 32px;
+`
+const CardLink = styled.a`
+  color: ${textColor("accent")};
+
+  svg {
+    margin-right: 10px;
+  }
+`
+const CardDescription = styled.p`
+  font-size: 1.14rem;
+  color: #7d8ca1; /* we have 3 gray'ish colors defined already 🤔 */
+  letter-spacing: 0;
+  line-height: 1.5;
+`
+const CardFooter = styled.footer`
+  background: rgba(39, 124, 220, 0.04);
+  padding-top: 35px;
+  padding-bottom: 35px;
+  margin-top: auto;
+  font-size: 0.857rem;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  svg {
+    margin-right: 4px;
+  }
+`
+const Card = styled.article`
+  display: flex;
+  flex: 1 320px;
+  flex-direction: column;
+  border: 1px solid ${textColor("lightest")};
+  border-top-width: 6px;
+  border-radius: 5px;
+  margin: 0 7.5px 24px;
+
+  > * {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+`
 
 const IndexPage: AppFunctionComponent<IProps> = ({
   data: {
@@ -247,7 +313,7 @@ const IndexPage: AppFunctionComponent<IProps> = ({
               // language match
               (filter.language.id === languages.ANY.id ||
                 r.languages.edges.filter((e) => {
-                  return e.node.name === filter.language.name
+                  return e.node.id === filter.language.id
                 }).length)
           )
           .map((r) => (
@@ -258,9 +324,31 @@ const IndexPage: AppFunctionComponent<IProps> = ({
                   <AddIcon />
                 </CardStar>
               </CardHeader>
-              <CardLink>{r.url.split("github.com/")[1]}</CardLink>
+              <CardLink>
+                <ExternalLinkIcon />
+                {r.url.split("github.com/")[1]}
+              </CardLink>
               <CardDescription>{r.description}</CardDescription>
-              <CardFooter>..</CardFooter>
+              <CardFooter>
+                <div>
+                  <ColorLanguage
+                    style={{ color: r.languages.edges[0].node.color }}
+                  />{" "}
+                  {r.languages.edges[0].node.name}
+                </div>
+                <div>
+                  <StarsIcon />
+                  {r.stargazers.totalCount}
+                </div>
+                <div>
+                  <VisitorsIcon />
+                  {r.assignableUsers.totalCount}
+                </div>
+                <div>
+                  <IssuesIcon />
+                  {r.issues.totalCount}
+                </div>
+              </CardFooter>
             </Card>
           ))}
       </Cards>

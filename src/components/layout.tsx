@@ -13,11 +13,13 @@ import { backgroundColor, textColor } from "../theming/theme-getters"
 
 const ContentWrapper = styled.div`
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 1150px;
   padding: 5rem 1.0875rem 5rem;
 `
 
 const GlobalStyle = createGlobalStyle`
+  * { box-sizing: border-box; }
+
   html, body {
     font-family: Quicksand;
     font-size: 14px;
@@ -25,6 +27,10 @@ const GlobalStyle = createGlobalStyle`
     color: ${textColor("primary")};
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.5;
+    margin: .667em 0;
+  }
   h1 { font-size: 1.428rem; }
   h2 { font-size: 1.26rem; }
 
@@ -58,6 +64,12 @@ const GlobalStyle = createGlobalStyle`
     color: #fff;
     background: ${textColor("accent")};
     border-color: ${textColor("accent")};
+  }
+
+  svg {
+    fill: currentColor;
+    vertical-align: middle;
+    display: inline-block;
   }
 `
 
