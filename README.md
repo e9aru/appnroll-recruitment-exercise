@@ -11,7 +11,7 @@ Setup following environment variables (you can do it by creating `.env.\*` file)
 ## Notes
 
 - Things like number of listed repositories or pagination wasn't mentioned -> it's set to ask for last 6
-- Traffic data are not supported yet in GitHub v4 -> corresponding element (from repository card footer) is fake '?'
+- To read traffic data you need to have push access (also not supported yet in GitHub graphql) -> corresponding element (from repository card footer) is fake '?'
 - `color-ranguage.svg` was edited (replace static fill color with currentColor) for color inheritance
 - there is no search icon (magnifier)) in assets directory -> made it with css
 
