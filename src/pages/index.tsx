@@ -102,16 +102,21 @@ const Details = styled.div`
   }
 `
 
-const Search = styled.input``
+const SearchWrapper = styled.div`
+  position: relative;
+`
+const Search = styled.input`
+  width: 100%;
+`
 const SearchIcon = styled.div`
-  display: inline-block;
   width: 16px;
   height: 16px;
   overflow: hidden;
-  position: relative;
-  left: -40px;
-  margin-right: -16px;
+  position: absolute;
   z-index: 1;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
 
   :before {
     content: "";
@@ -146,7 +151,7 @@ const Filters = styled.form`
   justify-content: space-between;
   align-items: center;
 
-  input, select, button {
+  > * {
     margin: 9px;
     flex-basis: 100%;
     }
@@ -155,7 +160,7 @@ const Filters = styled.form`
   @media (min-width: ${breakpoint("sm")}) {
     max-width: 600px;
 
-    input, select, button {
+    > * {
       flex-basis: auto;
     }
   }
@@ -391,13 +396,15 @@ const IndexPage: AppFunctionComponent<IProps> = ({
         repositoriesCount={organization.repositories.nodes.length}
       />
       <Filters title="Filters">
-        <Search
-          title="Search pharse"
-          placeholder="Search"
-          value={filter.query}
-          onChange={handleSearchChange}
-        />
-        <SearchIcon onClick={handleSearchIconClick} />
+        <SearchWrapper>
+          <Search
+            title="Search pharse"
+            placeholder="Search"
+            value={filter.query}
+            onChange={handleSearchChange}
+          />
+          <SearchIcon onClick={handleSearchIconClick} />
+        </SearchWrapper>
         <Language
           title="Language"
           value={filter.language.id}
