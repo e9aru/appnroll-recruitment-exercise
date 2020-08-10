@@ -101,56 +101,39 @@ const Details = styled.div`
     white-space: nowrap;
   }
 `
-const ProfileInfo = styled(
-  (props: {
-    name: string
-    className?: string
-    description: string
-    location: string
-    websiteUrl: string
-    repositoriesCount: number
-  }) => (
-    <header className={props.className}>
-      <Avatar
-        title={"Visit " + props.name + " website"}
-        href={props.websiteUrl}
-        target="_blank"
-        rel="nofollow"
-      >
-        <Logo title={props.name} />
-      </Avatar>
-      <Details>
-        <h1>
-          {props.name}
-          {!props.repositoriesCount ? ` has no repositories yet` : `'s `}
-          repositor{props.repositoriesCount < 2 ? `y` : `ies`}
-        </h1>
-        <p>{props.description}</p>
-        <div>
-          <span title="Location">
-            <LocationIcon />
-            {props.location}
-          </span>
-          <span>
-            <LinkIcon />
-            <a
-              title={"Visit " + props.name + " website"}
-              href={props.websiteUrl}
-              target="_blank"
-              rel="nofollow"
-            >
-              {props.websiteUrl}
-            </a>
-          </span>
-        </div>
-      </Details>
-    </header>
-  )
-)`
-  display: flex;
-  align-items: center;
-`
+
 const Search = styled.input``
+const SearchIcon = styled.div`
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  position: relative;
+  left: -40px;
+  margin-right: -16px;
+  z-index: 1;
+
+  :before {
+    content: "";
+    display: block;
+    width: ${8 * Math.SQRT2}px;
+    height: 1px;
+    background: ${textColor("light")};
+    transform: translate(8px, 14px) rotate(45deg);
+  }
+
+  :after {
+    content: "";
+    display: block;
+    position: relative;
+    z-index: 2;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border: 1px solid ${textColor("light")};
+    border-radius: 200%;
+  }
+`
 const Language = styled.select`
   flex-grow: 1;
   margin: 0 1.125rem;
@@ -161,8 +144,9 @@ const Filters = styled.form`
   flex: 1 1 auto;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 
-  > * {
+  input, select, button {
     margin: 9px;
     flex-basis: 100%;
     }
@@ -171,7 +155,7 @@ const Filters = styled.form`
   @media (min-width: ${breakpoint("sm")}) {
     max-width: 600px;
 
-    > * {
+    input, select, button {
       flex-basis: auto;
     }
   }
@@ -266,6 +250,56 @@ const Card = styled.article`
   }
 `
 
+const ProfileInfo = styled(
+  (props: {
+    name: string
+    className?: string
+    description: string
+    location: string
+    websiteUrl: string
+    repositoriesCount: number
+  }) => (
+    <header className={props.className}>
+      <Avatar
+        title={"Visit " + props.name + " website"}
+        href={props.websiteUrl}
+        target="_blank"
+        rel="nofollow"
+      >
+        <Logo title={props.name} />
+      </Avatar>
+      <Details>
+        <h1>
+          {props.name}
+          {!props.repositoriesCount ? ` has no repositories yet` : `'s `}
+          repositor{props.repositoriesCount < 2 ? `y` : `ies`}
+        </h1>
+        <p>{props.description}</p>
+        <div>
+          <span title="Location">
+            <LocationIcon />
+            {props.location}
+          </span>
+          <span>
+            <LinkIcon />
+            <a
+              title={"Visit " + props.name + " website"}
+              href={props.websiteUrl}
+              target="_blank"
+              rel="nofollow"
+            >
+              {props.websiteUrl}
+            </a>
+          </span>
+        </div>
+      </Details>
+    </header>
+  )
+)`
+  display: flex;
+  align-items: center;
+`
+
 const IndexPage: AppFunctionComponent<IProps> = ({
   data: {
     github: { organization },
@@ -338,6 +372,14 @@ const IndexPage: AppFunctionComponent<IProps> = ({
     setFilter({ query: "", language: languages.ANY })
   }
 
+  const handleSearchIconClick = (e: React.MouseEvent<HTMLElement>): void => {
+    const input = document.querySelector<HTMLElement>(
+      "." + Search.styledComponentId
+    )
+
+    if (input) input.focus()
+  }
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -355,6 +397,7 @@ const IndexPage: AppFunctionComponent<IProps> = ({
           value={filter.query}
           onChange={handleSearchChange}
         />
+        <SearchIcon onClick={handleSearchIconClick} />
         <Language
           title="Language"
           value={filter.language.id}
