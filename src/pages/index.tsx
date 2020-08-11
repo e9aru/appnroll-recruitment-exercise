@@ -29,7 +29,7 @@ interface IRepository {
   stargazers: {
     totalCount: number
   }
-  description: string
+  description: string | null
   url: string
 }
 interface IProps {
@@ -40,9 +40,9 @@ interface IProps {
           nodes: IRepository[]
         }
         name: string
-        description: string
-        location: string
-        websiteUrl: string
+        description: string | null
+        location: string | null
+        websiteUrl: string | null
       }
     }
   }
@@ -254,20 +254,19 @@ const Card = styled.article`
     flex-basis: calc(33.33% - 15px);
   }
 `
-
 const ProfileInfo = styled(
   (props: {
     name: string
     className?: string
-    description: string
-    location: string
-    websiteUrl: string
+    description: string | null
+    location: string | null
+    websiteUrl: string | null
     repositoriesCount: number
   }) => (
     <header className={props.className}>
       <Avatar
         aria-label={"Visit " + props.name + " website"}
-        href={props.websiteUrl}
+        href={props.websiteUrl || "#"}
         target="_blank"
         rel="nofollow"
       >
@@ -281,21 +280,25 @@ const ProfileInfo = styled(
         </h1>
         <p>{props.description}</p>
         <div>
-          <span role="region" aria-label="Location">
-            <LocationIcon />
-            {props.location}
-          </span>
-          <span>
-            <LinkIcon />
-            <a
-              aria-label={"Visit " + props.name + " website"}
-              href={props.websiteUrl}
-              target="_blank"
-              rel="nofollow"
-            >
-              {props.websiteUrl}
-            </a>
-          </span>
+          {props.location && (
+            <span role="region" aria-label="Location">
+              <LocationIcon />
+              {props.location}
+            </span>
+          )}
+          {props.name && (
+            <span>
+              <LinkIcon />
+              <a
+                aria-label={"Visit " + props.name + " website"}
+                href={props.websiteUrl || "#"}
+                target="_blank"
+                rel="nofollow"
+              >
+                {props.websiteUrl}
+              </a>
+            </span>
+          )}
         </div>
       </Details>
     </header>
@@ -379,7 +382,7 @@ const IndexPage: AppFunctionComponent<IProps> = ({
     setFilter({ query: "", language: languages.ANY })
   }
 
-  const handleSearchIconClick = (e: React.MouseEvent<HTMLElement>): void => {
+  const handleSearchIconClick = (): void => {
     const input = document.querySelector<HTMLElement>(
       "." + Search.styledComponentId
     )
@@ -428,7 +431,7 @@ const IndexPage: AppFunctionComponent<IProps> = ({
         </Language>
         <button onClick={clearFilters}>Clear filters</button>
       </Filters>
-      <Cards>
+      <Cards role="list">
         {organization.repositories.nodes
           .filter(
             (r) =>
@@ -448,6 +451,7 @@ const IndexPage: AppFunctionComponent<IProps> = ({
 
             return (
               <Card
+                role="listitem"
                 key={r.id}
                 style={{ borderTopColor: r.languages.nodes[0].color }}
               >
