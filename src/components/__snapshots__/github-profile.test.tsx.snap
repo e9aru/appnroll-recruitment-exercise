@@ -64,7 +64,6 @@ Object {
             class="sc-AxhCb cAHyVF"
             name="search"
             placeholder="Search"
-            role="searchbox"
             value=""
           />
           <div
@@ -596,7 +595,6 @@ Object {
           class="sc-AxhCb cAHyVF"
           name="search"
           placeholder="Search"
-          role="searchbox"
           value=""
         />
         <div
