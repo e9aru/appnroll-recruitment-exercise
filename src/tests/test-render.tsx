@@ -17,11 +17,11 @@ export function render(
 export function render<Q extends Queries>(
   ui: React.ReactElement,
   options: RenderOptions<Q>
-): RenderResult<Q>
+): RenderResult
 export function render<Q extends Queries>(
   ui: React.ReactElement,
   options?: RenderOptions<Q> | Omit<RenderOptions, "queries">
-) {
+): RenderResult {
   return reactRender<Q>(
     <ThemeProvider theme={theme}>{ui}</ThemeProvider>,
     // @ts-ignore
