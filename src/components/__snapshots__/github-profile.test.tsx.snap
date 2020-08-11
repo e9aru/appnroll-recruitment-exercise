@@ -1,0 +1,1122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render render 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <header
+        class="sc-fznZeY jvmzMU"
+      >
+        <a
+          aria-label="Visit App'n'roll website"
+          class="sc-AxjAm fjEsnr"
+          href="https://appnroll.com"
+          rel="nofollow"
+          target="_blank"
+        >
+          <test-file-stub />
+        </a>
+        <div
+          class="sc-AxirZ jLVoyJ"
+        >
+          <h1>
+            App'n'roll
+            's 
+            repositor
+            ies
+          </h1>
+          <p>
+            A venture building company. Having fun building scalable businesses.
+          </p>
+          <div>
+            <span
+              aria-label="Location"
+              role="region"
+            >
+              <test-file-stub />
+              Warsaw, Poland
+            </span>
+            <span>
+              <test-file-stub />
+              <a
+                aria-label="Visit App'n'roll website"
+                href="https://appnroll.com"
+                rel="nofollow"
+                target="_blank"
+              >
+                https://appnroll.com
+              </a>
+            </span>
+          </div>
+        </div>
+      </header>
+      <form
+        aria-label="Filters"
+        class="sc-AxheI daNRsB"
+        role="search"
+      >
+        <div
+          class="sc-AxiKw lkoKWO"
+        >
+          <input
+            aria-label="Search pharse"
+            class="sc-AxhCb cAHyVF"
+            name="search"
+            placeholder="Search"
+            role="searchbox"
+            value=""
+          />
+          <div
+            class="sc-AxhUy kzTxFH"
+          />
+        </div>
+        <select
+          aria-label="Language"
+          class="sc-AxgMl IiOEo"
+          name="language"
+        >
+          <option
+            aria-selected="true"
+            value="ANY"
+          >
+            Select language
+          </option>
+          <option
+            aria-selected="false"
+            value="MDg6TGFuZ3VhZ2U0MTc="
+          >
+            HTML
+          </option>
+          <option
+            aria-selected="false"
+            value="MDg6TGFuZ3VhZ2UxNDA="
+          >
+            JavaScript
+          </option>
+          <option
+            aria-selected="false"
+            value="MDg6TGFuZ3VhZ2U0MDM="
+          >
+            Makefile
+          </option>
+          <option
+            aria-selected="false"
+            value="MDg6TGFuZ3VhZ2UyODc="
+          >
+            TypeScript
+          </option>
+        </select>
+        <button>
+          Clear filters
+        </button>
+      </form>
+      <section
+        class="sc-fznyAO cjnxwM"
+        role="list"
+      >
+        <article
+          class="sc-fznKkj fdvFVE"
+          role="listitem"
+          style="border-top-color: #e34c26;"
+        >
+          <header
+            class="sc-Axmtr dXgRrs"
+          >
+            <h2
+              class="sc-AxmLO Ppkax"
+            >
+              appnroll-recruitment-exercise
+            </h2>
+            <button
+              aria-label="Unstar"
+              aria-pressed="false"
+              class="sc-fzozJi cYWdkR"
+            >
+              <test-file-stub />
+            </button>
+          </header>
+          <a
+            aria-label="Visit repository"
+            class="sc-fzoLsD cpntTZ"
+            href="https://github.com/Appnroll/appnroll-recruitment-exercise"
+            rel="nofollow"
+            target="_blank"
+          >
+            <test-file-stub />
+            Appnroll/appnroll-recruitment-exercise
+          </a>
+          <p
+            class="sc-fzpans eGIDyl"
+          >
+            App'n'roll Recruitment Exercise
+          </p>
+          <footer
+            class="sc-fzplWN hZCrFE"
+          >
+            <div
+              aria-label="Language color"
+              role="region"
+              style="color: rgb(227, 76, 38);"
+            >
+              <test-file-stub />
+              HTML
+            </div>
+            <div
+              aria-label="Starred $(r.stargazers.totalCount) times"
+              role="region"
+            >
+              <test-file-stub />
+              1
+            </div>
+            <div
+              aria-label="Visitors amount"
+              role="region"
+            >
+              <test-file-stub />
+              ?
+            </div>
+            <div
+              aria-label="0 issues"
+              role="region"
+            >
+              <test-file-stub />
+              0
+            </div>
+          </footer>
+        </article>
+        <article
+          class="sc-fznKkj fdvFVE"
+          role="listitem"
+          style="border-top-color: #f1e05a;"
+        >
+          <header
+            class="sc-Axmtr dXgRrs"
+          >
+            <h2
+              class="sc-AxmLO Ppkax"
+            >
+              appnroll-developers
+            </h2>
+            <button
+              aria-label="Unstar"
+              aria-pressed="false"
+              class="sc-fzozJi cYWdkR"
+            >
+              <test-file-stub />
+            </button>
+          </header>
+          <a
+            aria-label="Visit repository"
+            class="sc-fzoLsD cpntTZ"
+            href="https://github.com/Appnroll/appnroll-developers"
+            rel="nofollow"
+            target="_blank"
+          >
+            <test-file-stub />
+            Appnroll/appnroll-developers
+          </a>
+          <p
+            class="sc-fzpans eGIDyl"
+          >
+            This is a space for App'n'roll's developers to store some knowledge about our processeses, work and similar topics.
+          </p>
+          <footer
+            class="sc-fzplWN hZCrFE"
+          >
+            <div
+              aria-label="Language color"
+              role="region"
+              style="color: rgb(241, 224, 90);"
+            >
+              <test-file-stub />
+              JavaScript
+            </div>
+            <div
+              aria-label="Starred $(r.stargazers.totalCount) times"
+              role="region"
+            >
+              <test-file-stub />
+              0
+            </div>
+            <div
+              aria-label="Visitors amount"
+              role="region"
+            >
+              <test-file-stub />
+              ?
+            </div>
+            <div
+              aria-label="0 issues"
+              role="region"
+            >
+              <test-file-stub />
+              0
+            </div>
+          </footer>
+        </article>
+        <article
+          class="sc-fznKkj fdvFVE"
+          role="listitem"
+          style="border-top-color: #427819;"
+        >
+          <header
+            class="sc-Axmtr dXgRrs"
+          >
+            <h2
+              class="sc-AxmLO Ppkax"
+            >
+              OpenTripPlanner
+            </h2>
+            <button
+              aria-label="Unstar"
+              aria-pressed="false"
+              class="sc-fzozJi cYWdkR"
+            >
+              <test-file-stub />
+            </button>
+          </header>
+          <a
+            aria-label="Visit repository"
+            class="sc-fzoLsD cpntTZ"
+            href="https://github.com/Appnroll/OpenTripPlanner"
+            rel="nofollow"
+            target="_blank"
+          >
+            <test-file-stub />
+            Appnroll/OpenTripPlanner
+          </a>
+          <p
+            class="sc-fzpans eGIDyl"
+          >
+            An open source multi-modal trip planner
+          </p>
+          <footer
+            class="sc-fzplWN hZCrFE"
+          >
+            <div
+              aria-label="Language color"
+              role="region"
+              style="color: rgb(66, 120, 25);"
+            >
+              <test-file-stub />
+              Makefile
+            </div>
+            <div
+              aria-label="Starred $(r.stargazers.totalCount) times"
+              role="region"
+            >
+              <test-file-stub />
+              2
+            </div>
+            <div
+              aria-label="Visitors amount"
+              role="region"
+            >
+              <test-file-stub />
+              ?
+            </div>
+            <div
+              aria-label="0 issues"
+              role="region"
+            >
+              <test-file-stub />
+              0
+            </div>
+          </footer>
+        </article>
+        <article
+          class="sc-fznKkj fdvFVE"
+          role="listitem"
+          style="border-top-color: #2b7489;"
+        >
+          <header
+            class="sc-Axmtr dXgRrs"
+          >
+            <h2
+              class="sc-AxmLO Ppkax"
+            >
+              appnroll-app-function-component
+            </h2>
+            <button
+              aria-label="Unstar"
+              aria-pressed="false"
+              class="sc-fzozJi cYWdkR"
+            >
+              <test-file-stub />
+            </button>
+          </header>
+          <a
+            aria-label="Visit repository"
+            class="sc-fzoLsD cpntTZ"
+            href="https://github.com/Appnroll/appnroll-app-function-component"
+            rel="nofollow"
+            target="_blank"
+          >
+            <test-file-stub />
+            Appnroll/appnroll-app-function-component
+          </a>
+          <p
+            class="sc-fzpans eGIDyl"
+          >
+            AppFunctionComponent
+          </p>
+          <footer
+            class="sc-fzplWN hZCrFE"
+          >
+            <div
+              aria-label="Language color"
+              role="region"
+              style="color: rgb(43, 116, 137);"
+            >
+              <test-file-stub />
+              TypeScript
+            </div>
+            <div
+              aria-label="Starred $(r.stargazers.totalCount) times"
+              role="region"
+            >
+              <test-file-stub />
+              0
+            </div>
+            <div
+              aria-label="Visitors amount"
+              role="region"
+            >
+              <test-file-stub />
+              ?
+            </div>
+            <div
+              aria-label="0 issues"
+              role="region"
+            >
+              <test-file-stub />
+              0
+            </div>
+          </footer>
+        </article>
+        <article
+          class="sc-fznKkj fdvFVE"
+          role="listitem"
+          style="border-top-color: #2b7489;"
+        >
+          <header
+            class="sc-Axmtr dXgRrs"
+          >
+            <h2
+              class="sc-AxmLO Ppkax"
+            >
+              appnroll-delay-response-function
+            </h2>
+            <button
+              aria-label="Unstar"
+              aria-pressed="false"
+              class="sc-fzozJi cYWdkR"
+            >
+              <test-file-stub />
+            </button>
+          </header>
+          <a
+            aria-label="Visit repository"
+            class="sc-fzoLsD cpntTZ"
+            href="https://github.com/Appnroll/appnroll-delay-response-function"
+            rel="nofollow"
+            target="_blank"
+          >
+            <test-file-stub />
+            Appnroll/appnroll-delay-response-function
+          </a>
+          <p
+            class="sc-fzpans eGIDyl"
+          >
+            Function for controlled delaying of asynchronous response
+          </p>
+          <footer
+            class="sc-fzplWN hZCrFE"
+          >
+            <div
+              aria-label="Language color"
+              role="region"
+              style="color: rgb(43, 116, 137);"
+            >
+              <test-file-stub />
+              TypeScript
+            </div>
+            <div
+              aria-label="Starred $(r.stargazers.totalCount) times"
+              role="region"
+            >
+              <test-file-stub />
+              0
+            </div>
+            <div
+              aria-label="Visitors amount"
+              role="region"
+            >
+              <test-file-stub />
+              ?
+            </div>
+            <div
+              aria-label="0 issues"
+              role="region"
+            >
+              <test-file-stub />
+              0
+            </div>
+          </footer>
+        </article>
+        <article
+          class="sc-fznKkj fdvFVE"
+          role="listitem"
+          style="border-top-color: #f1e05a;"
+        >
+          <header
+            class="sc-Axmtr dXgRrs"
+          >
+            <h2
+              class="sc-AxmLO Ppkax"
+            >
+              appnroll-eslint-config
+            </h2>
+            <button
+              aria-label="Unstar"
+              aria-pressed="false"
+              class="sc-fzozJi cYWdkR"
+            >
+              <test-file-stub />
+            </button>
+          </header>
+          <a
+            aria-label="Visit repository"
+            class="sc-fzoLsD cpntTZ"
+            href="https://github.com/Appnroll/appnroll-eslint-config"
+            rel="nofollow"
+            target="_blank"
+          >
+            <test-file-stub />
+            Appnroll/appnroll-eslint-config
+          </a>
+          <p
+            class="sc-fzpans eGIDyl"
+          />
+          <footer
+            class="sc-fzplWN hZCrFE"
+          >
+            <div
+              aria-label="Language color"
+              role="region"
+              style="color: rgb(241, 224, 90);"
+            >
+              <test-file-stub />
+              JavaScript
+            </div>
+            <div
+              aria-label="Starred $(r.stargazers.totalCount) times"
+              role="region"
+            >
+              <test-file-stub />
+              1
+            </div>
+            <div
+              aria-label="Visitors amount"
+              role="region"
+            >
+              <test-file-stub />
+              ?
+            </div>
+            <div
+              aria-label="0 issues"
+              role="region"
+            >
+              <test-file-stub />
+              0
+            </div>
+          </footer>
+        </article>
+      </section>
+    </div>
+  </body>,
+  "container": <div>
+    <header
+      class="sc-fznZeY jvmzMU"
+    >
+      <a
+        aria-label="Visit App'n'roll website"
+        class="sc-AxjAm fjEsnr"
+        href="https://appnroll.com"
+        rel="nofollow"
+        target="_blank"
+      >
+        <test-file-stub />
+      </a>
+      <div
+        class="sc-AxirZ jLVoyJ"
+      >
+        <h1>
+          App'n'roll
+          's 
+          repositor
+          ies
+        </h1>
+        <p>
+          A venture building company. Having fun building scalable businesses.
+        </p>
+        <div>
+          <span
+            aria-label="Location"
+            role="region"
+          >
+            <test-file-stub />
+            Warsaw, Poland
+          </span>
+          <span>
+            <test-file-stub />
+            <a
+              aria-label="Visit App'n'roll website"
+              href="https://appnroll.com"
+              rel="nofollow"
+              target="_blank"
+            >
+              https://appnroll.com
+            </a>
+          </span>
+        </div>
+      </div>
+    </header>
+    <form
+      aria-label="Filters"
+      class="sc-AxheI daNRsB"
+      role="search"
+    >
+      <div
+        class="sc-AxiKw lkoKWO"
+      >
+        <input
+          aria-label="Search pharse"
+          class="sc-AxhCb cAHyVF"
+          name="search"
+          placeholder="Search"
+          role="searchbox"
+          value=""
+        />
+        <div
+          class="sc-AxhUy kzTxFH"
+        />
+      </div>
+      <select
+        aria-label="Language"
+        class="sc-AxgMl IiOEo"
+        name="language"
+      >
+        <option
+          aria-selected="true"
+          value="ANY"
+        >
+          Select language
+        </option>
+        <option
+          aria-selected="false"
+          value="MDg6TGFuZ3VhZ2U0MTc="
+        >
+          HTML
+        </option>
+        <option
+          aria-selected="false"
+          value="MDg6TGFuZ3VhZ2UxNDA="
+        >
+          JavaScript
+        </option>
+        <option
+          aria-selected="false"
+          value="MDg6TGFuZ3VhZ2U0MDM="
+        >
+          Makefile
+        </option>
+        <option
+          aria-selected="false"
+          value="MDg6TGFuZ3VhZ2UyODc="
+        >
+          TypeScript
+        </option>
+      </select>
+      <button>
+        Clear filters
+      </button>
+    </form>
+    <section
+      class="sc-fznyAO cjnxwM"
+      role="list"
+    >
+      <article
+        class="sc-fznKkj fdvFVE"
+        role="listitem"
+        style="border-top-color: #e34c26;"
+      >
+        <header
+          class="sc-Axmtr dXgRrs"
+        >
+          <h2
+            class="sc-AxmLO Ppkax"
+          >
+            appnroll-recruitment-exercise
+          </h2>
+          <button
+            aria-label="Unstar"
+            aria-pressed="false"
+            class="sc-fzozJi cYWdkR"
+          >
+            <test-file-stub />
+          </button>
+        </header>
+        <a
+          aria-label="Visit repository"
+          class="sc-fzoLsD cpntTZ"
+          href="https://github.com/Appnroll/appnroll-recruitment-exercise"
+          rel="nofollow"
+          target="_blank"
+        >
+          <test-file-stub />
+          Appnroll/appnroll-recruitment-exercise
+        </a>
+        <p
+          class="sc-fzpans eGIDyl"
+        >
+          App'n'roll Recruitment Exercise
+        </p>
+        <footer
+          class="sc-fzplWN hZCrFE"
+        >
+          <div
+            aria-label="Language color"
+            role="region"
+            style="color: rgb(227, 76, 38);"
+          >
+            <test-file-stub />
+            HTML
+          </div>
+          <div
+            aria-label="Starred $(r.stargazers.totalCount) times"
+            role="region"
+          >
+            <test-file-stub />
+            1
+          </div>
+          <div
+            aria-label="Visitors amount"
+            role="region"
+          >
+            <test-file-stub />
+            ?
+          </div>
+          <div
+            aria-label="0 issues"
+            role="region"
+          >
+            <test-file-stub />
+            0
+          </div>
+        </footer>
+      </article>
+      <article
+        class="sc-fznKkj fdvFVE"
+        role="listitem"
+        style="border-top-color: #f1e05a;"
+      >
+        <header
+          class="sc-Axmtr dXgRrs"
+        >
+          <h2
+            class="sc-AxmLO Ppkax"
+          >
+            appnroll-developers
+          </h2>
+          <button
+            aria-label="Unstar"
+            aria-pressed="false"
+            class="sc-fzozJi cYWdkR"
+          >
+            <test-file-stub />
+          </button>
+        </header>
+        <a
+          aria-label="Visit repository"
+          class="sc-fzoLsD cpntTZ"
+          href="https://github.com/Appnroll/appnroll-developers"
+          rel="nofollow"
+          target="_blank"
+        >
+          <test-file-stub />
+          Appnroll/appnroll-developers
+        </a>
+        <p
+          class="sc-fzpans eGIDyl"
+        >
+          This is a space for App'n'roll's developers to store some knowledge about our processeses, work and similar topics.
+        </p>
+        <footer
+          class="sc-fzplWN hZCrFE"
+        >
+          <div
+            aria-label="Language color"
+            role="region"
+            style="color: rgb(241, 224, 90);"
+          >
+            <test-file-stub />
+            JavaScript
+          </div>
+          <div
+            aria-label="Starred $(r.stargazers.totalCount) times"
+            role="region"
+          >
+            <test-file-stub />
+            0
+          </div>
+          <div
+            aria-label="Visitors amount"
+            role="region"
+          >
+            <test-file-stub />
+            ?
+          </div>
+          <div
+            aria-label="0 issues"
+            role="region"
+          >
+            <test-file-stub />
+            0
+          </div>
+        </footer>
+      </article>
+      <article
+        class="sc-fznKkj fdvFVE"
+        role="listitem"
+        style="border-top-color: #427819;"
+      >
+        <header
+          class="sc-Axmtr dXgRrs"
+        >
+          <h2
+            class="sc-AxmLO Ppkax"
+          >
+            OpenTripPlanner
+          </h2>
+          <button
+            aria-label="Unstar"
+            aria-pressed="false"
+            class="sc-fzozJi cYWdkR"
+          >
+            <test-file-stub />
+          </button>
+        </header>
+        <a
+          aria-label="Visit repository"
+          class="sc-fzoLsD cpntTZ"
+          href="https://github.com/Appnroll/OpenTripPlanner"
+          rel="nofollow"
+          target="_blank"
+        >
+          <test-file-stub />
+          Appnroll/OpenTripPlanner
+        </a>
+        <p
+          class="sc-fzpans eGIDyl"
+        >
+          An open source multi-modal trip planner
+        </p>
+        <footer
+          class="sc-fzplWN hZCrFE"
+        >
+          <div
+            aria-label="Language color"
+            role="region"
+            style="color: rgb(66, 120, 25);"
+          >
+            <test-file-stub />
+            Makefile
+          </div>
+          <div
+            aria-label="Starred $(r.stargazers.totalCount) times"
+            role="region"
+          >
+            <test-file-stub />
+            2
+          </div>
+          <div
+            aria-label="Visitors amount"
+            role="region"
+          >
+            <test-file-stub />
+            ?
+          </div>
+          <div
+            aria-label="0 issues"
+            role="region"
+          >
+            <test-file-stub />
+            0
+          </div>
+        </footer>
+      </article>
+      <article
+        class="sc-fznKkj fdvFVE"
+        role="listitem"
+        style="border-top-color: #2b7489;"
+      >
+        <header
+          class="sc-Axmtr dXgRrs"
+        >
+          <h2
+            class="sc-AxmLO Ppkax"
+          >
+            appnroll-app-function-component
+          </h2>
+          <button
+            aria-label="Unstar"
+            aria-pressed="false"
+            class="sc-fzozJi cYWdkR"
+          >
+            <test-file-stub />
+          </button>
+        </header>
+        <a
+          aria-label="Visit repository"
+          class="sc-fzoLsD cpntTZ"
+          href="https://github.com/Appnroll/appnroll-app-function-component"
+          rel="nofollow"
+          target="_blank"
+        >
+          <test-file-stub />
+          Appnroll/appnroll-app-function-component
+        </a>
+        <p
+          class="sc-fzpans eGIDyl"
+        >
+          AppFunctionComponent
+        </p>
+        <footer
+          class="sc-fzplWN hZCrFE"
+        >
+          <div
+            aria-label="Language color"
+            role="region"
+            style="color: rgb(43, 116, 137);"
+          >
+            <test-file-stub />
+            TypeScript
+          </div>
+          <div
+            aria-label="Starred $(r.stargazers.totalCount) times"
+            role="region"
+          >
+            <test-file-stub />
+            0
+          </div>
+          <div
+            aria-label="Visitors amount"
+            role="region"
+          >
+            <test-file-stub />
+            ?
+          </div>
+          <div
+            aria-label="0 issues"
+            role="region"
+          >
+            <test-file-stub />
+            0
+          </div>
+        </footer>
+      </article>
+      <article
+        class="sc-fznKkj fdvFVE"
+        role="listitem"
+        style="border-top-color: #2b7489;"
+      >
+        <header
+          class="sc-Axmtr dXgRrs"
+        >
+          <h2
+            class="sc-AxmLO Ppkax"
+          >
+            appnroll-delay-response-function
+          </h2>
+          <button
+            aria-label="Unstar"
+            aria-pressed="false"
+            class="sc-fzozJi cYWdkR"
+          >
+            <test-file-stub />
+          </button>
+        </header>
+        <a
+          aria-label="Visit repository"
+          class="sc-fzoLsD cpntTZ"
+          href="https://github.com/Appnroll/appnroll-delay-response-function"
+          rel="nofollow"
+          target="_blank"
+        >
+          <test-file-stub />
+          Appnroll/appnroll-delay-response-function
+        </a>
+        <p
+          class="sc-fzpans eGIDyl"
+        >
+          Function for controlled delaying of asynchronous response
+        </p>
+        <footer
+          class="sc-fzplWN hZCrFE"
+        >
+          <div
+            aria-label="Language color"
+            role="region"
+            style="color: rgb(43, 116, 137);"
+          >
+            <test-file-stub />
+            TypeScript
+          </div>
+          <div
+            aria-label="Starred $(r.stargazers.totalCount) times"
+            role="region"
+          >
+            <test-file-stub />
+            0
+          </div>
+          <div
+            aria-label="Visitors amount"
+            role="region"
+          >
+            <test-file-stub />
+            ?
+          </div>
+          <div
+            aria-label="0 issues"
+            role="region"
+          >
+            <test-file-stub />
+            0
+          </div>
+        </footer>
+      </article>
+      <article
+        class="sc-fznKkj fdvFVE"
+        role="listitem"
+        style="border-top-color: #f1e05a;"
+      >
+        <header
+          class="sc-Axmtr dXgRrs"
+        >
+          <h2
+            class="sc-AxmLO Ppkax"
+          >
+            appnroll-eslint-config
+          </h2>
+          <button
+            aria-label="Unstar"
+            aria-pressed="false"
+            class="sc-fzozJi cYWdkR"
+          >
+            <test-file-stub />
+          </button>
+        </header>
+        <a
+          aria-label="Visit repository"
+          class="sc-fzoLsD cpntTZ"
+          href="https://github.com/Appnroll/appnroll-eslint-config"
+          rel="nofollow"
+          target="_blank"
+        >
+          <test-file-stub />
+          Appnroll/appnroll-eslint-config
+        </a>
+        <p
+          class="sc-fzpans eGIDyl"
+        />
+        <footer
+          class="sc-fzplWN hZCrFE"
+        >
+          <div
+            aria-label="Language color"
+            role="region"
+            style="color: rgb(241, 224, 90);"
+          >
+            <test-file-stub />
+            JavaScript
+          </div>
+          <div
+            aria-label="Starred $(r.stargazers.totalCount) times"
+            role="region"
+          >
+            <test-file-stub />
+            1
+          </div>
+          <div
+            aria-label="Visitors amount"
+            role="region"
+          >
+            <test-file-stub />
+            ?
+          </div>
+          <div
+            aria-label="0 issues"
+            role="region"
+          >
+            <test-file-stub />
+            0
+          </div>
+        </footer>
+      </article>
+    </section>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
