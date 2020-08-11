@@ -311,7 +311,9 @@ const IndexPage: AppFunctionComponent<IProps> = ({
   },
 }) => {
   const LSKEY = "starred"
-  const languages: any = { ANY: { id: "ANY", name: "", color: "" } }
+  const languages: { [prop: string]: ILanguage } = {
+    ANY: { id: "ANY", name: "", color: "" },
+  }
   const [filter, setFilter] = useState<IFilter>({
     query: "",
     language: languages.ANY,
