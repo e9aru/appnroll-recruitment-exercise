@@ -266,12 +266,12 @@ const ProfileInfo = styled(
   }) => (
     <header className={props.className}>
       <Avatar
-        title={"Visit " + props.name + " website"}
+        aria-label={"Visit " + props.name + " website"}
         href={props.websiteUrl}
         target="_blank"
         rel="nofollow"
       >
-        <Logo title={props.name} />
+        <Logo />
       </Avatar>
       <Details>
         <h1>
@@ -281,14 +281,14 @@ const ProfileInfo = styled(
         </h1>
         <p>{props.description}</p>
         <div>
-          <span title="Location">
+          <span role="region" aria-label="Location">
             <LocationIcon />
             {props.location}
           </span>
           <span>
             <LinkIcon />
             <a
-              title={"Visit " + props.name + " website"}
+              aria-label={"Visit " + props.name + " website"}
               href={props.websiteUrl}
               target="_blank"
               rel="nofollow"
@@ -395,10 +395,11 @@ const IndexPage: AppFunctionComponent<IProps> = ({
         websiteUrl={organization.websiteUrl}
         repositoriesCount={organization.repositories.nodes.length}
       />
-      <Filters title="Filters">
+      <Filters aria-label="Filters">
         <SearchWrapper>
           <Search
-            title="Search pharse"
+            name="search"
+            aria-label="Search pharse"
             placeholder="Search"
             value={filter.query}
             onChange={handleSearchChange}
@@ -406,7 +407,8 @@ const IndexPage: AppFunctionComponent<IProps> = ({
           <SearchIcon onClick={handleSearchIconClick} />
         </SearchWrapper>
         <Language
-          title="Language"
+          aria-label="Language"
+          name="language"
           value={filter.language.id}
           onChange={handleLanguageChange}
         >
@@ -422,9 +424,7 @@ const IndexPage: AppFunctionComponent<IProps> = ({
             </option>
           ))}
         </Language>
-        <button title="Clear filters" onClick={clearFilters}>
-          Clear filters
-        </button>
+        <button onClick={clearFilters}>Clear filters</button>
       </Filters>
       <Cards>
         {organization.repositories.nodes
@@ -441,58 +441,66 @@ const IndexPage: AppFunctionComponent<IProps> = ({
                   return n.id === filter.language.id
                 }).length)
           )
-          .map((r) => (
-            <Card
-              key={r.id}
-              style={{ borderTopColor: r.languages.nodes[0].color }}
-            >
-              <CardHeader>
-                <CardTitle>{r.name}</CardTitle>
-                <CardStar
-                  title={starred.includes(r.id) ? "Star" : "Unstar"}
-                  onClick={handleStarClick.bind(null, r.id)}
-                >
-                  {starred.includes(r.id) ? <AddedIcon /> : <AddIcon />}
-                </CardStar>
-              </CardHeader>
-              <CardLink
-                title="Visit repository"
-                href={r.url}
-                target="_blank"
-                rel="nofollow"
+          .map((r) => {
+            const isStarred: boolean = starred.includes(r.id)
+
+            return (
+              <Card
+                key={r.id}
+                style={{ borderTopColor: r.languages.nodes[0].color }}
               >
-                <ExternalLinkIcon />
-                {r.url.split("github.com/")[1]}
-              </CardLink>
-              <CardDescription>{r.description}</CardDescription>
-              <CardFooter>
-                <div>
-                  <ColorLanguage
-                    title="Language color"
+                <CardHeader>
+                  <CardTitle>{r.name}</CardTitle>
+                  <CardStar
+                    aria-label={isStarred ? "Star" : "Unstar"}
+                    aria-pressed={isStarred}
+                    onClick={handleStarClick.bind(null, r.id)}
+                  >
+                    {starred.includes(r.id) ? <AddedIcon /> : <AddIcon />}
+                  </CardStar>
+                </CardHeader>
+                <CardLink
+                  aria-label="Visit repository"
+                  href={r.url}
+                  target="_blank"
+                  rel="nofollow"
+                >
+                  <ExternalLinkIcon />
+                  {r.url.split("github.com/")[1]}
+                </CardLink>
+                <CardDescription>{r.description}</CardDescription>
+                <CardFooter>
+                  <div
+                    role="region"
+                    aria-label="Language color"
                     style={{ color: r.languages.nodes[0].color }}
-                  />{" "}
-                  {r.languages.nodes[0].name}
-                </div>
-                <div>
-                  <StarsIcon
-                    title={`Starred $(r.stargazers.totalCount) times`}
-                  />
-                  {r.stargazers.totalCount}
-                </div>
-                <div>
-                  <VisitorsIcon />?
-                </div>
-                <div>
-                  <IssuesIcon
-                    title={`${r.issues.totalCount} issue${
+                  >
+                    <ColorLanguage />
+                    {r.languages.nodes[0].name}
+                  </div>
+                  <div
+                    role="region"
+                    aria-label={`Starred $(r.stargazers.totalCount) times`}
+                  >
+                    <StarsIcon />
+                    {r.stargazers.totalCount}
+                  </div>
+                  <div role="region" aria-label="Visitors amount">
+                    <VisitorsIcon />?
+                  </div>
+                  <div
+                    role="region"
+                    aria-label={`${r.issues.totalCount} issue${
                       r.issues.totalCount === 1 ? "" : "s"
                     }`}
-                  />
-                  {r.issues.totalCount}
-                </div>
-              </CardFooter>
-            </Card>
-          ))}
+                  >
+                    <IssuesIcon />
+                    {r.issues.totalCount}
+                  </div>
+                </CardFooter>
+              </Card>
+            )
+          })}
       </Cards>
     </Layout>
   )
