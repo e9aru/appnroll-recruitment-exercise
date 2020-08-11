@@ -365,6 +365,10 @@ const GithubProfile: AppFunctionComponent = () => {
   //   console.log("FILTER:", filter)
   // })
 
+  const handleFiltersSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault()
+  }
+
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     e.preventDefault()
     setFilter({ query: e.target.value, language: filter.language })
@@ -427,7 +431,11 @@ const GithubProfile: AppFunctionComponent = () => {
         websiteUrl={organization.websiteUrl}
         repositoriesCount={organization.repositories.nodes.length}
       />
-      <Filters aria-label="Filters">
+      <Filters
+        aria-label="Filters"
+        role="search"
+        onSubmit={handleFiltersSubmit}
+      >
         <SearchWrapper>
           <Search
             name="search"
