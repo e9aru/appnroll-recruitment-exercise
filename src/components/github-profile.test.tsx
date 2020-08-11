@@ -162,7 +162,7 @@ describe("filter", () => {
     const { getByRole, getAllByRole, getByText } = render(<GithubProfile />)
     expect(getAllByRole("listitem")).toHaveLength(6)
 
-    fireEvent.change(getByRole("searchbox"), {
+    fireEvent.change(getByRole("textbox"), {
       target: { value: "Open" },
     })
     expect(getAllByRole("listitem")).toHaveLength(1)
