@@ -14,6 +14,7 @@ Setup following environment variables (you can do it by creating `.env.\*` file)
 - To read traffic data you need to have push access (also not supported yet in GitHub graphql) -> corresponding element (from repository card footer) is fake '?'
 - `color-ranguage.svg` was edited (replace static fill color with currentColor) for color inheritance
 - there is no search icon (magnifier)) in assets directory -> made it with css
+- as for stories, I made a draft (staticQuery is not working with storybook - GithubProfile component probably needs to be rewritten as a hook)
 
 ---
 
