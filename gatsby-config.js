@@ -15,6 +15,7 @@ const siteUrl = netlifyProduction
   : NETLIFY_DEPLOY_URL
 
 module.exports = {
+  pathPrefix: `/appnroll-recruitment-exercise`,
   siteMetadata: {
     title: `App'n'roll Starter`,
     description: `Application made by App'n'roll`,
@@ -32,6 +33,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gh-pages`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

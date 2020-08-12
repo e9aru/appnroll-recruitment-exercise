@@ -96,6 +96,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
     "start": "npm run develop",
     "serve": "gatsby serve",
