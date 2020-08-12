@@ -354,16 +354,13 @@ const GithubProfile: AppFunctionComponent = () => {
   `)
 
   // Generate languages
-  organization.repositories.nodes.forEach(
-    (r: IRepository) =>
-      (languages[r.languages.nodes[0].id] = {
-        ...r.languages.nodes[0],
-      })
-  )
+  organization.repositories.nodes.forEach((r: IRepository) => {
+    if (r.languages.nodes.length)
+      languages[r.languages.nodes[0].id] = { ...r.languages.nodes[0] }
+  })
 
   // useEffect(() => {
-  //   console.log("FILTER:", filter)
-  // })
+  // }, [])
 
   const handleFiltersSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
@@ -483,12 +480,15 @@ const GithubProfile: AppFunctionComponent = () => {
           )
           .map((r: IRepository) => {
             const isStarred: boolean = starred.includes(r.id)
+            const color: string =
+              (r.languages.nodes.length && r.languages.nodes[0].color) ||
+              `inherit`
 
             return (
               <Card
                 role="listitem"
                 key={r.id}
-                style={{ borderTopColor: r.languages.nodes[0].color }}
+                style={{ borderTopColor: color }}
               >
                 <CardHeader>
                   <CardTitle>{r.name}</CardTitle>
@@ -511,14 +511,16 @@ const GithubProfile: AppFunctionComponent = () => {
                 </CardLink>
                 <CardDescription>{r.description}</CardDescription>
                 <CardFooter>
-                  <div
-                    role="region"
-                    aria-label="Language color"
-                    style={{ color: r.languages.nodes[0].color }}
-                  >
-                    <ColorLanguage />
-                    {r.languages.nodes[0].name}
-                  </div>
+                  {r.languages.nodes.length && (
+                    <div
+                      role="region"
+                      aria-label="Language color"
+                      style={{ color }}
+                    >
+                      <ColorLanguage />
+                      {r.languages.nodes[0].name}
+                    </div>
+                  )}
                   <div
                     role="region"
                     aria-label={`Starred $(r.stargazers.totalCount) times`}
